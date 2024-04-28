@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mural de Fotos</title>
+<style>
+body {
+    font-family: Arial, sans-serif;
+    text-align: center; 
+}
+h1 {
+    margin-top: 20px;
+}
+.image-container {
+    display: inline-block; 
+}
+img {
+    width: 400px; 
+    height: auto;
+    margin-bottom: 10px; 
+}
+.caption-box {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+.comment-box {
+    border: 1px solid #ccc;
+    padding: 10px;
+}
+.comment {
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+    text-align: left;
+}
+.button {
+    display: block; 
+    margin: 0 auto; 
+}
+</style>
+</head>
+<body>
+    <h1>Mural de Fotos - Sonhos</h1>
+    <div class="image-container">
+        <a href="Imagem2.html">
+            <img src="viajem_sonhos.jpeg" alt="Imagem 2">
+        </a>
+        <div class="caption-box">
+            <p>Essa foto representa meu sonho de viver viajando o mundo!</p>
+        </div>
+        <div class="comment-box">
+            <h3>Comentários</h3>
+            <textarea id="commentText" rows="4" cols="50"></textarea>
+            <br>
+            <button class="button" onclick="addComment()">Enviar Comentário</button>
+        </div>
+        <div id="commentsSection"></div>
+    </div>
+    
+    <script>
+        function addComment() {
+            var commentText = document.getElementById("commentText").value;
+            if (commentText.trim() !== "") {
+                var commentDiv = document.createElement("div");
+                commentDiv.classList.add("comment");
+                commentDiv.innerHTML = commentText;
+                document.getElementById("commentsSection").appendChild(commentDiv);
+                document.getElementById("commentText").value = "";
+            }
+        }
+    </script>
+    <button onclick="window.location.href='MuralFotos.html'">Voltar ao Mural</button>
+</body>
+</html>
